@@ -32,7 +32,6 @@ def handle_request(client_socket):
 
     file_path = os.path.normpath(os.path.join(WWW_DIR, path.lstrip('/')))
     
-    # Previene path traversal
     if os.path.commonprefix((os.path.realpath(file_path), os.path.realpath(WWW_DIR))) != os.path.realpath(WWW_DIR):
         response_code = 403
         response = f"HTTP/1.1 {response_code} Forbidden\r\n\r\nForbidden"
@@ -57,7 +56,6 @@ def handle_request(client_socket):
             header = f"HTTP/1.1 404 Not Found\r\nContent-Type: {mime_type}\r\n\r\n"
             client_socket.sendall(header.encode() + content)
         else:
-            # Fallback se 404.html non esiste
             response = f"HTTP/1.1 404 Not Found\r\nContent-Type: text/html\r\n\r\n<h1>404 Not Found</h1>"
             client_socket.sendall(response.encode())
 
