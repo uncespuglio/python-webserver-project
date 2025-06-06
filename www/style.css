@@ -1,0 +1,227 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background: linear-gradient(to bottom, #e2cfa5, #c8ae7b);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    outline: none;
+}
+a:visited {
+    color: inherit;
+}
+a:focus {
+    outline: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+.logo-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+}
+.logo-header a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+}
+.logo-header img {
+    cursor: pointer;
+    width: 40%;
+    height: auto;
+}
+
+.logo {
+    width: 20%;
+    height: auto;
+}
+
+.intro-section {
+    text-align: center;
+    margin: 30px auto;
+    width: 90%;
+    max-width: 800px;
+}
+
+.centered-heading {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.hero-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+.hero-card {
+    box-sizing: border-box;
+    text-align: center;
+    padding: 10px;
+    width: 330px;
+    height: 384px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.hero-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+.hero-card img {
+    display: block;
+    margin: 0 auto 10px auto;
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+@media (max-width: 600px) {
+    .hero-list {
+        flex-direction: column;
+        align-items: center;
+    }
+    .hero-card {
+        width: 90%;
+        height: auto;
+        margin: 10px 0;
+    }
+    .hero-card img {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+.hero-header {
+    text-align: center;
+    margin-top: 20px;
+}
+.hero-header img {
+    max-height: 330px;
+    margin-top: 10px;
+}
+
+.hero-columns {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+.hero-description,
+.hero-equipment,
+.equipment-combo {
+    background-color: #e2cfa5;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    flex: 1 1 30%;
+    min-width: 280px;
+    box-sizing: border-box;
+    text-align: center;
+}
+.hero-equipment {
+    flex: 1 1 30%;
+}
+
+@media (max-width: 900px) {
+    .hero-columns {
+        flex-direction: column;
+        align-items: center;
+    }
+    .hero-description,
+    .hero-equipment,
+    .equipment-combo {
+        width: 90%;
+    }
+}
+
+.equipment-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    justify-items: center;
+    padding: 10px 0;
+    justify-content: center;
+}
+.equipment-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.equipment-item img {
+    max-width: 120px;
+    height: auto;
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.3));
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+.equipment-item img:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.4));
+}
+.equipment-item p {
+    font-weight: bold;
+    color: #cc0000;
+    margin-top: 5px;
+}
+
+.equipment-item a {
+    text-decoration: none;
+    color: #cc0000;
+}
+.equipment-item a:hover {
+    text-decoration: underline;
+    text-decoration-color: #cc0000;
+}
+
+.combo-pair {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.combo-plus {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0 10px;
+}
+
+body.index footer {
+    text-align: center;
+    color: #5b5b5b;
+    padding: 10px 0;
+}
+body:not(.index) footer {
+    padding-left: 30px;
+    text-align: left;
+}
+
+body.notfound {
+    background: #a81703;
+    margin: 0;
+    font-family: sans-serif;
+}
+body.notfound .hero-header {
+    text-align: center;
+    padding-top: 40px;
+}
+body.notfound .hero-header h1 {
+    margin-bottom: 10px;
+    color: #000;
+}
+body.notfound .hero-header p {
+    font-size: 2rem;
+    background: linear-gradient(to right, #f9d423, #ff4e50);
+    background-clip: text;
+    color: transparent;
+    margin-top: 10px;
+}
